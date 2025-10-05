@@ -215,7 +215,8 @@ Fixes to try
 pip install py-cpuinfo numpy
 then re-run:
 pip install deepspeed
-2. Use a compatible Python versi
+
+2) Commented out flash-attn
 
 ## 🙏 BibTeX
 
