@@ -201,6 +201,8 @@ gdown --folder 'https://drive.google.com/drive/folders/1pYKJOu2aBGC-jgoWbfP6T_vq
 
 Additionally, you can find a script to explore the routing behavior of the expert-choice MoR model in the `notebooks/250727_get_mor_routing_decision.ipynb` notebook.
 
+##Contributions
+1) build failiure in macOS due to deepspeed
 
 ## 🙏 BibTeX
 
