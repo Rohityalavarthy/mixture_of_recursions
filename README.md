@@ -201,8 +201,21 @@ gdown --folder 'https://drive.google.com/drive/folders/1pYKJOu2aBGC-jgoWbfP6T_vq
 
 Additionally, you can find a script to explore the routing behavior of the expert-choice MoR model in the `notebooks/250727_get_mor_routing_decision.ipynb` notebook.
 
-##Contributions
+## Contributions
 1) build failiure in macOS due to deepspeed
+
+Root cause
+You're on macOS (M1/M2 / Apple Silicon) with Python 3.12.
+deepspeed tries to import some ops (cpu_adam) during its setup.py egg_info phase.
+It fails because:
+cpuinfo package is missing → ModuleNotFoundError: No module named 'cpuinfo'.
+Deepspeed does not fully support Python 3.12 + macOS (MPS backend) out of the box — it expects CUDA or ROCm builds.
+Fixes to try
+1. Install the missing dependency first
+pip install py-cpuinfo numpy
+then re-run:
+pip install deepspeed
+2. Use a compatible Python versi
 
 ## 🙏 BibTeX
 
